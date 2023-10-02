@@ -1,0 +1,28 @@
+# POST http://localhost:3500/authenticate 
+# Content-Type: application/json
+
+# {"username": "adam"}
+
+# GET http://localhost:3500/user 
+# Content-Type: application/json
+
+# POST http://localhost:3500/user
+# Content-Type: application/json
+
+# {"username":"Sam", "password": "password123", "email": "email@gmail.com"}
+
+# POST http://localhost:3500/post
+# Content-Type: application/json
+
+# {"text":"A test text for posting posts", "userSessionId": "6519dfd680ff81014753de06"}
+
+# POST  http://localhost:3500/signup
+# Content-Type: application/json
+
+# {"username":"Sam", "password": "password123", "email": "email@gmail.com"}
+
+
+POST http://localhost:3500/
+Content-Type: application/json
+
+{"username":"Sam2", "password": "password123", "email": "email2@gmail.com"}
