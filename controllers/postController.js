@@ -9,11 +9,12 @@ async function getAllPosts(req, res) {
 }
 
 async function postPost(req, res) {
-  // we will get the id from the user session
-  const { text, userSessionId } = req.body;
+  console.log(req.body);
+
+  const { email, username, post } = req.body;
 
   // find the user to add the new post id to the users array
-  const currentUser = await User.findById(userSessionId);
+  const currentUser = await User.findOne({ email });
   console.log(currentUser);
 
   if (!currentUser) {
@@ -21,7 +22,7 @@ async function postPost(req, res) {
   }
 
   // add the userid to the postBy on the new post module
-  const newPost = new Post({ text, postedBy: userSessionId });
+  const newPost = new Post({ text: post, postedBy: currentUser._id });
 
   // add the newpost's id to the user's post array
   currentUser.posts.push(newPost._id);

@@ -3,7 +3,6 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 async function userVerification(req, res) {
-  console.log("GHIUHOUHIO");
   const token = req.cookies.token;
   if (!token) {
     return res.json({ status: false });
@@ -17,7 +16,7 @@ async function userVerification(req, res) {
       if (user) {
         return res.json({
           status: true,
-          user: user.username,
+          username: user.username,
           email: user.email,
         });
       } else {
